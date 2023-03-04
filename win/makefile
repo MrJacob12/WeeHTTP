@@ -7,7 +7,7 @@ INCLUDEDIRS =
 LIBDIRS = 
 LIBS = ws2_32
 
-CC = gcc
+#CC = gcc
 CFLAGS = -c -g -std=c11 -Wall -Wextra -Werror -Wno-unused-variable $(addprefix -I./, $(INCLUDEDIRS)) -DUNICODE
 LDFLAGS = $(addprefix -L./, $(LIBDIRS)) $(addprefix -l, $(LIBS))
 
