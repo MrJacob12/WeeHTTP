@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up MinGW
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
+    - name: make
+      working-directory: win
+      run: make
+      env:
+        CC: cc
+    - name: Upload binary
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: win/bin/api.exe
