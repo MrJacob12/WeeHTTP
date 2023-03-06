@@ -5,7 +5,7 @@ OBJDIR = obj
 
 INCLUDEDIRS = 
 LIBDIRS = 
-LIBS = ws2_32
+LIBS = ws2_32 pthread
 
 CC = gcc
 CFLAGS = -c -g -std=c11 -Wall -Wextra -Werror -Wno-unused-variable $(addprefix -I./, $(INCLUDEDIRS)) -DUNICODE
